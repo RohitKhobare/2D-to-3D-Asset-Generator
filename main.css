@@ -1,0 +1,28 @@
+.upload {
+    border: 2px dotted #00f0ff; /* Neon blue dotted border */
+    padding: 20px;
+    margin: 50px auto;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+label, input, button {
+    display: block;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+button {
+    background-color: #00f0ff;
+    border: none;
+    color: #16122e;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #00d4e0;
+}

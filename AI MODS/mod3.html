@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Audio</title>
+    <link rel="stylesheet" href="mod3.css">
+</head>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    
+    
+    <center><div class="wrapper">
+        <h2>TEXT TO AUDIO</h2>
+        
+        <form>
+        <textarea placeholder="Enter text here..." id="text"></textarea><br>
+        <div class="btnArea">
+        <button id="generateBtn" onclick="generate()"><span>Audio</span></button>
+        <button type="reset" id="resetBtn"><span>Reset </span></button><br>
+        </div>
+        </form>
+        
+        <!-- Audio Player -->
+        <div id="player">
+            <audio controls></audio>
+        </div>
+    </div></center>
+
+    <script>
+        const textarea = document.querySelector( "textarea" );
+        textarea.addEventListener("keyup", e => {
+            let scHeight = e.target.scrollHeight;
+            textarea.style.height = "63px";
+            textarea.style.height = `${scHeight}px`;
+        });  
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="mod2CG.css">
+</head>
+<body>
+    <div class="head">
+        <h2>SENTIMENT ANALYZER</h1>
+    </div>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+     </div>
+    
+    <br>
+        <div class="wrapper">
+            <h2>Enter a sentence and get its sentiments....</h2><br>
+            <form action="/sentiment_analysis" method="POST">
+                <textarea id="userInput" spellcheck="false" placeholder="Enter your text here..." required></textarea>
+                <br><br>
+                <center><button id="analyzeButton">Analyze Sentiments</button></center> 
+            </form> 
+        </div>
+        <div class="resultContainer">
+            <div id="sentimentResult">
+            </div>
+        </div>
+
+    <div id="result-container"></div>
+    </div>
+      
+    
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var textarea = document.getElementById('userInput');
+        var analyzeButton = document.getElementById('analyzeButton');
+        var sentimentResult = document.getElementById('sentimentResult');
+    
+        // Automatically adjust textarea height
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    
+        // Handle click event on Analyze Sentiments button
+        analyzeButton.addEventListener('click', function() {
+            var userInput = textarea.value;
+    
+            // Perform sentiment analysis (simulate for now)
+            var sentiment = analyzeSentiments(userInput);
+    
+            // Display sentiment result with animation
+            sentimentResult.textContent = "Sentiment: " + sentiment;
+            sentimentResult.style.animation = 'slideInFromLeftResult 0.5s ease forwards';
+        });
+    
+        // Simulated sentiment analysis function
+        function analyzeSentiments(text) {
+            // Simulate sentiment analysis result (randomly choose between positive, negative, neutral)
+            var sentiments = ['Positive', 'Negative', 'Neutral'];
+            var randomIndex = Math.floor(Math.random() * sentiments.length);
+            return sentiments[randomIndex];
+        }
+    });
+</script>
+</body>
+</html> 
